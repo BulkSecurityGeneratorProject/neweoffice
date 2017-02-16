@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span data-translate="neweofficeApp.filetosend.detail.title">Filetosend</span> {{vm.filetosend.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="neweofficeApp.filetosend.filename">Filename</span></dt>
+        <dd>
+            <span>{{vm.filetosend.filename}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.subject">Subject</span></dt>
+        <dd>
+            <span>{{vm.filetosend.subject}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.filetoupload">Filetoupload</span></dt>
+        <dd>
+            <div ng-if="vm.filetosend.filetoupload">
+                <a ng-click="vm.openFile(vm.filetosend.filetouploadContentType, vm.filetosend.filetoupload)" data-translate="entity.action.open">open</a>
+                {{vm.filetosend.filetouploadContentType}}, {{vm.byteSize(vm.filetosend.filetoupload)}}
+            </div>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.recipientemailid">Recipientemailid</span></dt>
+        <dd>
+            <span>{{vm.filetosend.recipientemailid}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.recipientname">Recipientname</span></dt>
+        <dd>
+            <span>{{vm.filetosend.recipientname}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.addsigner">Addsigner</span></dt>
+        <dd>
+            <span>{{vm.filetosend.addsigner}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.addcc">Addcc</span></dt>
+        <dd>
+            <span>{{vm.filetosend.addcc}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.addbulk">Addbulk</span></dt>
+        <dd>
+            <span>{{vm.filetosend.addbulk}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.currentlocation">Currentlocation</span></dt>
+        <dd>
+            <span>{{vm.filetosend.currentlocation}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.destinationlocation">Destinationlocation</span></dt>
+        <dd>
+            <span>{{vm.filetosend.destinationlocation}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.fileinitiatedon">Fileinitiatedon</span></dt>
+        <dd>
+            <span>{{vm.filetosend.fileinitiatedon | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.fileclosedon">Fileclosedon</span></dt>
+        <dd>
+            <span>{{vm.filetosend.fileclosedon | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.dispatchno">Dispatchno</span></dt>
+        <dd>
+            <span>{{vm.filetosend.dispatchno}}</span>
+        </dd>
+        <dt><span data-translate="neweofficeApp.filetosend.status">Status</span></dt>
+        <dd>
+            <span>{{vm.filetosend.status}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="filetosend-detail.edit({id:vm.filetosend.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

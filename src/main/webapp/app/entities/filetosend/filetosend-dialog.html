@@ -1,0 +1,140 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFiletosendLabel" data-translate="neweofficeApp.filetosend.home.createOrEditLabel">Create or edit a Filetosend</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.filetosend.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.filetosend.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.filename" for="field_filename">Filename</label>
+            <input type="text" class="form-control" name="filename" id="field_filename"
+                    ng-model="vm.filetosend.filename"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.subject" for="field_subject">Subject</label>
+            <input type="text" class="form-control" name="subject" id="field_subject"
+                    ng-model="vm.filetosend.subject"
+                    />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setFiletoupload($file, vm.filetosend)">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.filetoupload" for="field_filetoupload">Filetoupload</label>
+            <div>
+                <div ng-if="vm.filetosend.filetoupload" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.filetosend.filetouploadContentType, vm.filetosend.filetoupload)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.filetosend.filetouploadContentType}}, {{vm.byteSize(vm.filetosend.filetoupload)}}</span>
+                    <button type="button" ng-click="vm.filetosend.filetoupload=null;vm.filetosend.filetouploadContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setFiletoupload($file, vm.filetosend)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="filetoupload" id="field_filetoupload"
+                    ng-model="vm.filetosend.filetoupload"
+                    />
+            <input type="hidden" class="form-control" name="filetouploadContentType" id="field_filetouploadContentType"
+                    ng-model="vm.filetosend.filetouploadContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.recipientemailid" for="field_recipientemailid">Recipientemailid</label>
+            <input type="text" class="form-control" name="recipientemailid" id="field_recipientemailid"
+                    ng-model="vm.filetosend.recipientemailid"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.recipientname" for="field_recipientname">Recipientname</label>
+            <input type="text" class="form-control" name="recipientname" id="field_recipientname"
+                    ng-model="vm.filetosend.recipientname"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.addsigner" for="field_addsigner">Addsigner</label>
+            <input type="text" class="form-control" name="addsigner" id="field_addsigner"
+                    ng-model="vm.filetosend.addsigner"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.addcc" for="field_addcc">Addcc</label>
+            <input type="text" class="form-control" name="addcc" id="field_addcc"
+                    ng-model="vm.filetosend.addcc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.addbulk" for="field_addbulk">Addbulk</label>
+            <input type="text" class="form-control" name="addbulk" id="field_addbulk"
+                    ng-model="vm.filetosend.addbulk"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.currentlocation" for="field_currentlocation">Currentlocation</label>
+            <input type="text" class="form-control" name="currentlocation" id="field_currentlocation"
+                    ng-model="vm.filetosend.currentlocation"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.destinationlocation" for="field_destinationlocation">Destinationlocation</label>
+            <input type="text" class="form-control" name="destinationlocation" id="field_destinationlocation"
+                    ng-model="vm.filetosend.destinationlocation"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.fileinitiatedon" for="field_fileinitiatedon">Fileinitiatedon</label>
+                <div class="input-group">
+                    <input id="field_fileinitiatedon" type="text" class="form-control" name="fileinitiatedon" uib-datepicker-popup="{{dateformat}}" ng-model="vm.filetosend.fileinitiatedon" is-open="vm.datePickerOpenStatus.fileinitiatedon"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fileinitiatedon')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.fileclosedon" for="field_fileclosedon">Fileclosedon</label>
+                <div class="input-group">
+                    <input id="field_fileclosedon" type="text" class="form-control" name="fileclosedon" uib-datepicker-popup="{{dateformat}}" ng-model="vm.filetosend.fileclosedon" is-open="vm.datePickerOpenStatus.fileclosedon"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fileclosedon')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.dispatchno" for="field_dispatchno">Dispatchno</label>
+            <input type="text" class="form-control" name="dispatchno" id="field_dispatchno"
+                    ng-model="vm.filetosend.dispatchno"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="neweofficeApp.filetosend.status" for="field_status">Status</label>
+            <input type="checkbox" class="form-control" name="status" id="field_status"
+                    ng-model="vm.filetosend.status"
+                    />
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,122 @@
+<div ng-cloak>
+    <!--
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div><a href="/WebViewer/pdftronsample.html">WebViewer Tool <span class="badge">1</span></a></div>
+            <div><a href="/pdftron/pdftronsample.html">PDFTRON Tool<span class="badge">2</span></a></div>
+            <div><a href="/pdftron/index1.html">Kanirgarn Richi Pdf Book <span class="badge">3</span></a></div>
+
+            <button class="btn btn-primary" type="button">
+                Click Here<span class="badge">to open</span>
+            </button>
+        </div>
+    </div>
+    -->
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <a href="#/fms">
+                <button class="btn btn-primary" type="button">
+                    Upload A File<span class="badge">to upload</span>
+                </button>
+            </a>
+            <!--  directed to entity -->
+            <!--   <a href="#/cfms">
+                  <button class="btn btn-primary" type="button">
+                      Click Here<span class="badge">to open</span>
+                  </button>
+              </a> -->
+            <a href="#/signature">
+                <button type="button" class="btn btn-primary">
+                    Sign A Document<span class="badge">to sign</span>
+                </button>
+            </a>
+            <a href="#/send">
+                <button type="button" class="btn btn-primary">
+                    Send A Document<span class="badge">to send</span>
+                </button>
+            </a>
+
+
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+
+                <!-- Standard Form -->
+
+                <!--   <form action="#" method="post" enctype="multipart/form-data" id="js-upload-form"> -->
+
+                <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+                    <div class="modal-body">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <input type="file" name="files[]" id="js-upload-files" multiple>
+                                <div class="form-group" ngf-drop ngf-change="vm.setFiletoupload($file, vm.filetosend)">
+                                    <label class="control-label" data-translate="neweofficeApp.filetosend.filetoupload"
+                                           for="field_filetoupload">Filetoupload</label>
+                                    <div>
+                                        <div ng-if="vm.filetosend.filetoupload" class="help-block clearfix">
+                                            <a class="pull-left"
+                                               ng-click="vm.openFile(vm.filetosend.filetouploadContentType, vm.filetosend.filetoupload)"
+                                               data-translate="entity.action.open">open</a><br>
+                                            <span class="pull-left">{{vm.filetosend.filetouploadContentType}}, {{vm.byteSize(vm.filetosend.filetoupload)}}</span>
+                                            <button type="button"
+                                                    ng-click="vm.filetosend.filetoupload=null;vm.filetosend.filetouploadContentType=null;"
+                                                    class="btn btn-default btn-xs pull-right">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </div>
+                                        <button type="button" ngf-select class="btn btn-default btn-block"
+                                                ngf-change="vm.setFiletoupload($file, vm.filetosend)" data-translate="entity.action.addblob">
+                                            Add blob
+                                        </button>
+                                    </div>
+                                    <input type="hidden" class="form-control" name="filetoupload" id="field_filetoupload"
+                                           ng-model="vm.filetosend.filetoupload"
+                                    />
+                                    <input type="hidden" class="form-control" name="filetouploadContentType" id="field_filetouploadContentType"
+                                           ng-model="vm.filetosend.filetouploadContentType"/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                                </button>
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">UPLOAD A FILE
+                            </button>
+                            <button type="submit" class="btn btn-sm btn-primary" id="js-upload-from-cloud">GET FROM
+                                CLOUD
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Upload Finished -->
+                <div class="js-upload-finished">
+                    <h3>Processed files</h3>
+                    <div class="list-group">
+                        <a href="/pdftron/pdftronsample.html" class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>PDFTRON Tool</a>
+                        <a href="/pdftron/editpdftronsample.html" class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>Edit Pdftron Sample Getting Started
+                            page</a>
+                        <a href="/pdftron/index1.html" class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>Kanirgarn Richi Pdf Book</a>
+                        <a href="/pdftron/editkernighan_ritchie.html"
+                           class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>Edit Kanirgan Richi</a>
+                        <a href="pdftron/docker.html" class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>Docker</a>
+                        <a href="WebViewer/index.html" class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>Web Viewer</a>
+                        <a href="#" class="list-group-item list-group-item-success"><span
+                            class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- ng-cloak -->
+</div>
+

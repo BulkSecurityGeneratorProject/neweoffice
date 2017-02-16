@@ -1,0 +1,35 @@
+{
+    "neweofficeApp": {
+        "filetosend" : {
+            "home": {
+                "title": "Filetosends",
+                "createLabel": "Filetosend-ஐ உருவாக்கு",
+                "createOrEditLabel": "Filetosend -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Filetosend"
+            },
+            "created": "Filetosend புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Filetosend மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Filetosend நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Filetosend {{ id }}?"
+            },
+            "detail": {
+                "title": "Filetosend"
+            },
+            "filename": "Filename",
+            "subject": "Subject",
+            "filetoupload": "Filetoupload",
+            "recipientemailid": "Recipientemailid",
+            "recipientname": "Recipientname",
+            "addsigner": "Addsigner",
+            "addcc": "Addcc",
+            "addbulk": "Addbulk",
+            "currentlocation": "Currentlocation",
+            "destinationlocation": "Destinationlocation",
+            "fileinitiatedon": "Fileinitiatedon",
+            "fileclosedon": "Fileclosedon",
+            "dispatchno": "Dispatchno",
+            "status": "Status"
+        }
+    }
+}

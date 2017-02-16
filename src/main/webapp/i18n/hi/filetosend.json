@@ -1,0 +1,35 @@
+{
+    "neweofficeApp": {
+        "filetosend" : {
+            "home": {
+                "title": "Filetosends",
+                "createLabel": "नया Filetosend बनाएँ",
+                "createOrEditLabel": "Filetosend बनाएँ या संपादित करें",
+                "search": "Filetosend खोजें"
+            },
+            "created": "एक नया Filetosend [identifier: {{ param }}] तैयार है",
+            "updated": "एक Filetosend [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Filetosend [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Filetosend [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Filetosend"
+            },
+            "filename": "Filename",
+            "subject": "Subject",
+            "filetoupload": "Filetoupload",
+            "recipientemailid": "Recipientemailid",
+            "recipientname": "Recipientname",
+            "addsigner": "Addsigner",
+            "addcc": "Addcc",
+            "addbulk": "Addbulk",
+            "currentlocation": "Currentlocation",
+            "destinationlocation": "Destinationlocation",
+            "fileinitiatedon": "Fileinitiatedon",
+            "fileclosedon": "Fileclosedon",
+            "dispatchno": "Dispatchno",
+            "status": "Status"
+        }
+    }
+}

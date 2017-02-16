@@ -1,0 +1,35 @@
+{
+    "neweofficeApp": {
+        "filetosend" : {
+            "home": {
+                "title": "Filetosends",
+                "createLabel": "Crear nuevo Filetosend",
+                "createOrEditLabel": "Crear o editar Filetosend",
+                "search": "Search for Filetosend"
+            },
+            "created": "Un nuevo Filetosend ha sido creado con el identificador {{ param }}",
+            "updated": "Un Filetosend ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Filetosend ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Filetosend {{ id }}?"
+            },
+            "detail": {
+                "title": "Filetosend"
+            },
+            "filename": "Filename",
+            "subject": "Subject",
+            "filetoupload": "Filetoupload",
+            "recipientemailid": "Recipientemailid",
+            "recipientname": "Recipientname",
+            "addsigner": "Addsigner",
+            "addcc": "Addcc",
+            "addbulk": "Addbulk",
+            "currentlocation": "Currentlocation",
+            "destinationlocation": "Destinationlocation",
+            "fileinitiatedon": "Fileinitiatedon",
+            "fileclosedon": "Fileclosedon",
+            "dispatchno": "Dispatchno",
+            "status": "Status"
+        }
+    }
+}

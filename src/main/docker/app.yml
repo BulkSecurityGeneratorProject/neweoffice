@@ -1,0 +1,30 @@
+version: '2'
+services:
+    neweoffice-app:
+        image: neweoffice
+        external_links:
+            - neweoffice-cassandra:cassandra
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=cassandra
+            - JHIPSTER_SLEEP=30 # gives time for the Cassandra cluster to start and execute the migration scripts
+        ports:
+            - 8080:8080
+    neweoffice-cassandra:
+        extends:
+            file: cassandra-cluster.yml
+            service: neweoffice-cassandra
+    neweoffice-cassandra-node:
+        image: cassandra:3.9
+        links:
+            - neweoffice-cassandra:seed
+        environment:
+            - CASSANDRA_SEEDS=seed
+    neweoffice-cassandra-migration:
+        extends:
+            file: cassandra-migration.yml
+            service: neweoffice-cassandra-migration
+        links:
+            - neweoffice-cassandra
+        environment:
+            - CREATE_KEYSPACE_SCRIPT=create-keyspace-prod.cql

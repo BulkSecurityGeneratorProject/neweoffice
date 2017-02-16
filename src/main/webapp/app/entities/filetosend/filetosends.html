@@ -1,0 +1,85 @@
+<div>
+    <h2 data-translate="neweofficeApp.filetosend.home.title">Filetosends</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="filetosend.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="neweofficeApp.filetosend.home.createLabel">
+                        Create new Filetosend
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.filename">Filename</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.subject">Subject</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.filetoupload">Filetoupload</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.recipientemailid">Recipientemailid</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.recipientname">Recipientname</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.addsigner">Addsigner</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.addcc">Addcc</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.addbulk">Addbulk</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.currentlocation">Currentlocation</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.destinationlocation">Destinationlocation</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.fileinitiatedon">Fileinitiatedon</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.fileclosedon">Fileclosedon</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.dispatchno">Dispatchno</span></th>
+                    <th><span data-translate="neweofficeApp.filetosend.status">Status</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="filetosend in vm.filetosends track by filetosend.id">
+                    <td><a ui-sref="filetosend-detail({id:filetosend.id})">{{filetosend.id}}</a></td>
+                    <td>{{filetosend.filename}}</td>
+                    <td>{{filetosend.subject}}</td>
+                    <td>
+                        <a ng-if="filetosend.filetoupload" ng-click="vm.openFile(filetosend.filetouploadContentType, filetosend.filetoupload)" data-translate="entity.action.open">open</a>
+                        <span ng-if="filetosend.filetoupload">{{filetosend.filetouploadContentType}}, {{vm.byteSize(filetosend.filetoupload)}}</span>
+                    </td>
+                    <td>{{filetosend.recipientemailid}}</td>
+                    <td>{{filetosend.recipientname}}</td>
+                    <td>{{filetosend.addsigner}}</td>
+                    <td>{{filetosend.addcc}}</td>
+                    <td>{{filetosend.addbulk}}</td>
+                    <td>{{filetosend.currentlocation}}</td>
+                    <td>{{filetosend.destinationlocation}}</td>
+                        <td>{{filetosend.fileinitiatedon | date:'mediumDate'}}</td>
+                        <td>{{filetosend.fileclosedon | date:'mediumDate'}}</td>
+                    <td>{{filetosend.dispatchno}}</td>
+                    <td>{{filetosend.status}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="filetosend-detail({id:filetosend.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="filetosend.edit({id:filetosend.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="filetosend.delete({id:filetosend.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

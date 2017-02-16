@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "filename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subject",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "filetoupload",
+            "fieldType": "ByteBuffer",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "recipientemailid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recipientname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addsigner",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addcc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addbulk",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currentlocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "destinationlocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fileinitiatedon",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fileclosedon",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dispatchno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170215115811",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "filetosend",
+    "pagination": "no"
+}
